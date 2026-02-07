@@ -1,0 +1,15 @@
+- Generate a Vite + Vanilla JS + Leaflet project that visualizes NASA EONET v3 events on an interactive web map.
+- Implement API calls for /categories and /events with filters (status, limit, category ids).
+- Render latest event geometry on the map (Point markers + Polygon layers) with hover highlight and tooltips.
+- Build an editorial UI: top bar controls, sidebar story card, and loading/error banner.
+- Add a lightweight “counts by category” mini visualization for the currently loaded events.
+- Ensure GitHub Pages compatibility with Vite base path configuration and a gh-pages deploy script.
+- Provide README with API explanation, run instructions, and deploy steps.
+
+Tool: ChatGPT, GPT-5.2 Thinking
+Verified: no exposed API keys/secrets in the repo; NASA EONET requires no API key.
+
+Key prompts:
+- “Create a Vite + Vanilla JS + Leaflet project that visualizes NASA EONET v3 events…”
+- “Add hover tooltips, click-to-sidebar details, and a counts-by-category mini visualization…”
+- “Make it GitHub Pages compatible with Vite base path and gh-pages deploy script…”

@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>NASA EONET | Live Earth Events</title>
+  </head>
+  <body>
+    <div id="app">
+      <header class="topbar">
+        <div class="brand">
+          <div class="brand__title">Live Earth Events</div>
+          <div class="brand__sub">NASA EONET v3 • Interactive map + filters</div>
+        </div>
+
+        <div class="controls" id="controls">
+          <!-- rendered by ui.js -->
+        </div>
+      </header>
+
+      <main class="main">
+        <section class="map-wrap">
+          <div id="map" class="map"></div>
+
+          <div id="statusBanner" class="status-banner hidden">
+            <span id="statusBannerText"></span>
+          </div>
+        </section>
+
+        <aside class="sidebar">
+          <div class="sidebar__section">
+            <div class="sidebar__title">Overview</div>
+            <div id="counts" class="counts"></div>
+          </div>
+
+          <div class="sidebar__divider"></div>
+
+          <div class="sidebar__section">
+            <div class="sidebar__title">Event</div>
+            <div id="eventCard" class="event-card muted">
+              Click an event on the map to see details here.
+            </div>
+          </div>
+
+          <div class="sidebar__footer">
+            Data: NASA EONET • Map: Leaflet/OpenStreetMap
+          </div>
+        </aside>
+      </main>
+    </div>
+
+    <script type="module" src="/src/main.js"></script>
+  </body>
+</html>
