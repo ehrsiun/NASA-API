@@ -1,57 +1,15 @@
 # NASA EONET – Live Earth Events Map
 
-A lightweight, interactive web map that visualizes natural events from NASA’s **EONET v3** API (wildfires, storms, volcanoes, etc.). The app fetches event data as **JSON**, where each event includes **GeoJSON-like geometry** (Points and sometimes Polygons). Users can filter by event **status** (open/closed/all), **limit**, and **categories**, then explore events via hover tooltips and a click-to-view editorial sidebar.
+This project is an interactive web map that visualizes recent natural events around the world, such as wildfires, storms, and volcanic activity. Users can explore events geographically and filter them by status, category, and quantity.
 
-## API Used
-- Categories: `https://eonet.gsfc.nasa.gov/api/v3/categories`
-- Events: `https://eonet.gsfc.nasa.gov/api/v3/events?status=...&limit=...&category=...`
-Responses are JSON, and event geometries follow a GeoJSON-like format (e.g., `type: "Point"` with `[lon, lat]` coordinates or `type: "Polygon"` with coordinate rings).
+## API Usage
+The application uses NASA’s EONET v3 (Earth Observatory Natural Event Tracker) API to fetch live event data. API requests are made from JavaScript using the browser `fetch()` function, with query parameters including `status` (open, closed, or all), `limit` (number of events returned), and `category` (comma-separated category IDs).
 
-## Features
-- Map visualization (Leaflet): Points + Polygons
-- Hover highlight + tooltip (title, category, latest date)
-- Click event → sidebar details + “Zoom to event”
-- Filters: status, limit, multi-select categories
-- Mini data-vis: counts by category for the currently loaded results
-- Loading/error banner
+The API returns data in JSON format. Each event includes metadata and a list of GeoJSON-like geometries (Points or Polygons) representing event locations over time. This project uses the most recent geometry for each event to render it on an interactive map.
+
+EONET does not require an API key or authentication, and no credentials are stored or exposed in this repository.
 
 ## Run Locally
 ```bash
 npm install
 npm run dev
-```
-
-## Build / Preview
-```bash
-npm run build
-npm run preview
-```
-
-## Deploy to GitHub Pages (gh-pages)
-1) In `vite.config.js`, set:
-```js
-base: "/YOUR_REPO_NAME/"
-```
-
-2) Commit and push your repo to GitHub.
-
-3) Deploy:
-```bash
-npm run deploy
-```
-
-4) In GitHub:
-- Repo → **Settings** → **Pages**
-- Source: **Deploy from a branch**
-- Branch: `gh-pages` / root
-
-Your site will publish at:
-`https://YOUR_USERNAME.github.io/YOUR_REPO_NAME/`
-
-## Demo Video Checklist (30–60s)
-- Load page (map + events appear)
-- Change Status (open → all) and show results update
-- Toggle 1–2 category pills
-- Hover an event to show tooltip
-- Click an event → sidebar updates
-- Click “Zoom to event”
